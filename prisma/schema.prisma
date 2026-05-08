@@ -1,0 +1,129 @@
+// PayrollDAO - Prisma Schema
+// Supports PostgreSQL for production, SQLite for local dev
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Organization {
+  id          String   @id @default(cuid())
+  name        String
+  walletAddress String? @unique
+  email       String   @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  payrollGroups PayrollGroup[]
+  workers       Worker[]
+  payments      Payment[]
+}
+
+model Worker {
+  id            String   @id @default(cuid())
+  name          String
+  walletAddress String
+  email         String?
+  role          String?
+  status        WorkerStatus @default(ACTIVE)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id])
+
+  payrollGroupMembers PayrollGroupMember[]
+  payments            Payment[]
+}
+
+model PayrollGroup {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  currency    Currency @default(USDC)
+  frequency   PayFrequency @default(MONTHLY)
+  amount      Float    // per-worker amount
+  status      GroupStatus @default(ACTIVE)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id])
+
+  members  PayrollGroupMember[]
+  payments Payment[]
+}
+
+model PayrollGroupMember {
+  id             String   @id @default(cuid())
+  joinedAt       DateTime @default(now())
+
+  workerId       String
+  worker         Worker       @relation(fields: [workerId], references: [id])
+  payrollGroupId String
+  payrollGroup   PayrollGroup @relation(fields: [payrollGroupId], references: [id])
+
+  @@unique([workerId, payrollGroupId])
+}
+
+model Payment {
+  id            String        @id @default(cuid())
+  amount        Float
+  currency      Currency      @default(USDC)
+  type          PaymentType   @default(ONE_TIME)
+  status        PaymentStatus @default(PENDING)
+  txHash        String?       @unique
+  memo          String?
+  scheduledAt   DateTime?
+  completedAt   DateTime?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  organizationId  String
+  organization    Organization  @relation(fields: [organizationId], references: [id])
+  workerId        String?
+  worker          Worker?       @relation(fields: [workerId], references: [id])
+  payrollGroupId  String?
+  payrollGroup    PayrollGroup? @relation(fields: [payrollGroupId], references: [id])
+}
+
+enum WorkerStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+}
+
+enum GroupStatus {
+  ACTIVE
+  PAUSED
+  ARCHIVED
+}
+
+enum PayFrequency {
+  WEEKLY
+  BIWEEKLY
+  MONTHLY
+}
+
+enum Currency {
+  XLM
+  USDC
+}
+
+enum PaymentType {
+  ONE_TIME
+  RECURRING
+  STREAMED
+}
+
+enum PaymentStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
