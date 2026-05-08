@@ -31,7 +31,7 @@ export default function Navbar() {
               Why Stellar
             </Link>
             <a
-              href="https://github.com/payrolldao/payrolldao"
+              href="https://github.com/MooreTheAnalyst/payrolldao"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-gray-400 hover:text-white transition-colors"

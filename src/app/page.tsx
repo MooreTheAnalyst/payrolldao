@@ -99,7 +99,7 @@ export default function LandingPage() {
               <ArrowRight className="h-4 w-4" />
             </Link>
             <a
-              href="https://github.com/payrolldao/payrolldao"
+              href="https://github.com/MooreTheAnalyst/payrolldao"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-xl border border-white/20 px-6 py-3 text-base font-semibold text-white hover:border-white/40 transition-colors"
@@ -286,7 +286,7 @@ export default function LandingPage() {
               <ArrowRight className="h-4 w-4" />
             </Link>
             <a
-              href="https://github.com/payrolldao/payrolldao"
+              href="https://github.com/MooreTheAnalyst/payrolldao"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-xl border border-white/20 px-6 py-3 text-base font-semibold text-white hover:border-white/40 transition-colors"

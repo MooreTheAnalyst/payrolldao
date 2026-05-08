@@ -56,7 +56,7 @@ PayrollDAO replaces slow, expensive, exclusionary payroll infrastructure with a 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/payrolldao/payrolldao.git
+git clone https://github.com/MooreTheAnalyst/payrolldao.git
 cd payrolldao
 ```
 
@@ -186,5 +186,5 @@ MIT — see [LICENSE](./LICENSE) for details.
 
 ## Community
 
-- GitHub Issues: [github.com/payrolldao/payrolldao/issues](https://github.com/payrolldao/payrolldao/issues)
-- Discussions: [github.com/payrolldao/payrolldao/discussions](https://github.com/payrolldao/payrolldao/discussions)
+- GitHub Issues: [github.com/MooreTheAnalyst/payrolldao/issues](https://github.com/MooreTheAnalyst/payrolldao/issues)
+- Discussions: [github.com/MooreTheAnalyst/payrolldao/discussions](https://github.com/MooreTheAnalyst/payrolldao/discussions)

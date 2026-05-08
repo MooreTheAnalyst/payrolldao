@@ -201,7 +201,7 @@ export default function SettingsPage() {
           <p className="text-sm text-gray-400">
             PayrollDAO is open-source under the MIT License.{" "}
             <a
-              href="https://github.com/payrolldao/payrolldao"
+              href="https://github.com/MooreTheAnalyst/payrolldao"
               target="_blank"
               rel="noopener noreferrer"
               className="text-emerald-400 hover:underline"

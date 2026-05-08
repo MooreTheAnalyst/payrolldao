@@ -103,4 +103,4 @@ Some areas where contributions are especially welcome:
 
 ## Questions?
 
-Open a [GitHub Discussion](https://github.com/payrolldao/payrolldao/discussions) or file an issue. We're happy to help.
+Open a [GitHub Discussion](https://github.com/MooreTheAnalyst/payrolldao/discussions) or file an issue. We're happy to help.

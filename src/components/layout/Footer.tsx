@@ -35,17 +35,17 @@ export default function Footer() {
             <h4 className="mb-3 text-sm font-semibold text-white">Open Source</h4>
             <ul className="space-y-2">
               <li>
-                <a href="https://github.com/payrolldao/payrolldao" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-white transition-colors">
+                <a href="https://github.com/MooreTheAnalyst/payrolldao" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-white transition-colors">
                   GitHub
                 </a>
               </li>
               <li>
-                <a href="https://github.com/payrolldao/payrolldao/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-white transition-colors">
+                <a href="https://github.com/MooreTheAnalyst/payrolldao/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-white transition-colors">
                   Contributing
                 </a>
               </li>
               <li>
-                <a href="https://github.com/payrolldao/payrolldao/issues" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-white transition-colors">
+                <a href="https://github.com/MooreTheAnalyst/payrolldao/issues" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-white transition-colors">
                   Issues
                 </a>
               </li>
